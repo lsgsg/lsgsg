@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ 
+</style>
+</head>
+<body>
+	<table border = '1' style = " border-collapse:collapse">
+		<tr>
+			<th>번호</th><th>이름</th><th>주소</th>
+		</tr>
+		<tr>
+			<td>10</td><td>이겨라</td><td>강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>20</td><td>이겨라</td><td>강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>30</td><td>이겨라</td><td>강남구 역삼동</td>
+		</tr>
+	</table>
+<br>
+<table border = '1' style = " border-collapse:collapse;" background="image/back.png"
+width = "70%">
+	<caption> 상품자료 </caption>
+	<tr bgcolor="red">
+		<td bgcolor="yellow">상품명</td> <td>수량</td> <td>단가</td>
+	</tr>
+	<tr>
+		<td bgcolor="cyan">컴퓨터</td> <td>100</td> <td>999000</td>
+	</tr>
+</table>
+<br>
+<br>
+<br>
+<table  class = "tableC"width = "200px" border = '1' style = " border-collapse:collapse;" >
+	<tr>
+		<td rowspan="2">1</td> <td colspan="2">2</td> <td rowspan="2">3</td>
+	</tr>
+	<tr>
+		<td colspan="2">4</td> 
+	</tr>
+	<tr>
+		<td>5</td> <td>6</td> <td>7</td> <td rowspan="2">8</td>
+	</tr>
+	<tr>
+		<td>9</td> <td colspan="2">10</td>
+	</tr>
+</table>
+
+
+
+
+
+
+</body>
+</html>

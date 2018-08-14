@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>번호</th><th>이름</th><th>주소</th>
+		</tr>
+		<tr>
+			<td>10</td><td>이겨라</td><td>강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>20</td><td>이겨라</td><td>강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td>30</td><td>이겨라</td><td>강남구 역삼동</td>
+		</tr>
+	</table>
+</body>
+</html>

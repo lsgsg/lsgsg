@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지와 링크에 대해서</title>
+<style>
+	.imgStryle
+</style>
+</head>
+<body>
+<div class = 'imgStyle'>
+	<a href = "#" ><img src = "#" title ="무엇을 넣을지 아직 몰라"></a>
+	
+</div>
+</body>
+</html>

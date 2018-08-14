@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ㅅㅣ작합니다.</title>
+<style>
+ h1 { font-size: 25px; }
+ div {width: 500px; height:500px; background : #ee0; position:relative;}
+ a{width: 50px; height:50px; display:inline-block; background:#ff6;
+ 	position: absolute; left: 0; top: 0;
+ 	transition: 1s all;
+	text-align:center;
+	text-decoration:none;
+	color:#666;
+	
+ 	}
+ a.hover{ left: 100px}
+</style>
+</head>
+<body>
+	<h1> 내맘대로 시작하는 html </h1>
+	<div>
+		<a href ="#"> 잡아 봐라 </a>
+	</div>
+</body>
+</html>

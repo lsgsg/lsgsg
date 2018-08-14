@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+환영합니다.<br> 
+<!-- 라인스킵이 목적이므로 </br> 생략 -->
+<!-- html 주석 : html은 컴파일 한다 X; 파씽?한다 O -->
+행 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;분리
+문단나누기
+</body>
+</html>

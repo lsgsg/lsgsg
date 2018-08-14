@@ -1,0 +1,61 @@
+
+8월 14, 2018 09:41:47.70 NEW SESSION
+8월 14, 2018 09:41:47.71 [220:2368:0814/094147.704:ERROR:gpu_process_transport_factory.cc(1016)] Lost UI shared context.
+8월 14, 2018 09:42:31.96 Unable to read VR Path Registry from C:\Users\kitcoop\AppData\Local\openvr\openvrpaths.vrpath
+8월 14, 2018 09:47:55.14 [220:2368:0814/094755.144:ERROR:CONSOLE(1)] "Uncaught ReferenceError: inline is not defined", source: chrome://sync-confirmation/ (1)
+8월 14, 2018 09:50:07.22 [220:2368:0814/095007.225:ERROR:textfield.cc(1754)] NOT IMPLEMENTED
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:in_progress_cache_impl.cc(191)] Cache is not initialized, cannot RetrieveEntry.
+8월 14, 2018 11:03:40.25 [5140:5420:0814/110340.253:ERROR:gpu_process_transport_factory.cc(1016)] Lost UI shared context.
+8월 14, 2018 11:04:25.26 Unable to read VR Path Registry from C:\Users\kitcoop\AppData\Local\openvr\openvrpaths.vrpath
+8월 14, 2018 11:16:28.79 [3812:2080:0814/111628.779:ERROR:gpu_process_transport_factory.cc(1016)] Lost UI shared context.
+8월 14, 2018 11:17:13.77 Unable to read VR Path Registry from C:\Users\kitcoop\AppData\Local\openvr\openvrpaths.vrpath
+
+8월 14, 2018 13:05:49.79 NEW SESSION
+8월 14, 2018 13:05:49.79 [4520:216:0814/130549.791:ERROR:gpu_process_transport_factory.cc(1016)] Lost UI shared context.
+8월 14, 2018 13:06:34.80 Unable to read VR Path Registry from C:\Users\kitcoop\AppData\Local\openvr\openvrpaths.vrpath
+8월 14, 2018 16:41:54.38 [1472:5584:0814/164154.387:ERROR:gpu_process_transport_factory.cc(1016)] Lost UI shared context.
+8월 14, 2018 16:42:39.37 Unable to read VR Path Registry from C:\Users\kitcoop\AppData\Local\openvr\openvrpaths.vrpath

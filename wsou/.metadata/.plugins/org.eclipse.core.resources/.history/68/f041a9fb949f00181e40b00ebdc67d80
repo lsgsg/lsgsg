@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="홍길동" content="기본연습">
+<meta name = "subject/title" content="연습용 홈피">
+<meta name= "keyword" content="html 상세연습">
+<meta name= "description" content="페이지애 대한 설명">
+<meta http-equiv="refresh" content="3; url = aa.html">
+<title>Insert title here</title>
+</head>
+<body>
+ <form name = "formTag">
+ 	
+ </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지와 링크에 대해서</title>
+<style>
+	.imgStyle { }
+	a{ text-decoration : none;
+	   color : #666;
+	   font-size : 20px;
+	   font-weight:bold;
+	   
+	   }
+</style>
+</head>
+<body>
+<div class = 'imgStyle'>
+	<a href = "http://www.naver.com" target = "_blank">
+		<img src = "image/mouse.png" title ="툴팁">
+	</a>
+	<a href = "http://www.naver.com" target = "_blank">
+		<img src = "image/mouse1.png" title ="툴팁2">
+	</a>
+</div>
+</body>
+</html>
