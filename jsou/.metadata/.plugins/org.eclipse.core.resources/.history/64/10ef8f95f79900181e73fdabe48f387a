@@ -1,0 +1,16 @@
+package java_network;
+
+import java.net.InetAddress;
+
+public class NetTest3Client {
+
+	public static void main(String[] args) {
+		try {
+			InetAddress ia = InetAddress.getByName("192.168.0.)
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
+
+}

@@ -1,0 +1,17 @@
+import java.net.URL;
+
+public class UrlTest1 {
+	public UrlTest1(String str) {
+		try {
+			//프로토콜 http;// 과 도메인네임, 포트번호 , 경로를 을 줘야. -> uri url 이다. 
+			URL url = new URL(str);//java.net
+		} catch (Exception e) {
+			
+		}
+	}
+	public static void main(String[] args) {
+		new UrlTest1("http://www.naver.com");
+
+	}
+
+}

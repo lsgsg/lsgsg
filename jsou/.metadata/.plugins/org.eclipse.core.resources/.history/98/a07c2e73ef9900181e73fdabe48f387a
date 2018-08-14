@@ -1,0 +1,20 @@
+package java_network;
+
+import java.net.InetAddress;
+
+public class NetTest1 {
+
+	public static void main(String[] args) {
+		InetAddress ia;
+		InetAddress ia2[];
+		
+		try {
+			ia = InetAddress.getByName("www.naver.com");
+			System.out.println(ia);
+		} catch (Exception e) {
+			System.out.println("err: " + e);
+		}
+
+	}
+
+}

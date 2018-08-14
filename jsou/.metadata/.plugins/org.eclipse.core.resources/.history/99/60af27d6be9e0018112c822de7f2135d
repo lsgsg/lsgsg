@@ -1,0 +1,13 @@
+import java.rmi.Naming;
+
+public class RmiHelloServer {
+	public static void main(String[] args) {
+		try {
+			/// 원격 객체를 작성후 rmi registry에 등록
+			RmiHelloImpl impl = new RmiHelloImpl();
+			Naming.rebind("rmi://192.168.0.8", obj);
+		} catch (Exception e) {
+			System.out.println("서버 에러 : "  + e);
+		}
+	}
+}

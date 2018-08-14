@@ -1,0 +1,23 @@
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.Scanner;
+
+public class RmiHelloImpl extends UnicastRemoteObject implements RmiHelloInter {
+	int gugudan;
+	public RmiHelloImpl() throws RemoteException {
+		System.out.println("서버에 옴 : " + gugudan);
+		Scanner sc = new Scanner(System.in);
+		System.out.println( "구구단 몇단? : ");
+		int num = sc.nextInt();
+	}
+	
+	@Override
+	public String sayHello(int gugudan) throws RemoteException {
+		
+		
+		return gugudan + "님 반가워요." + "뚜루기";
+	}
+	public static void main(String[] args) {
+		new RmiHelloImpl();
+	}
+}

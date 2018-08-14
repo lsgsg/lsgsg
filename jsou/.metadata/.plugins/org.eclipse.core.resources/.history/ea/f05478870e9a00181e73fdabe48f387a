@@ -1,0 +1,33 @@
+import java.io.BufferedReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ChatServer implements Runnable {
+	ServerSocket ss;
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public ChatServer() {
+		
+	}
+	
+	
+	
+	//client별 처리용 내부 클라스
+	class Service extends Thread{
+		String chat_name;
+		BufferedReader in;
+		OutputStream out;
+		Socket socket;
+	}
+	public static void main(String[] args) {
+		new ChatServer();
+
+	}
+
+}

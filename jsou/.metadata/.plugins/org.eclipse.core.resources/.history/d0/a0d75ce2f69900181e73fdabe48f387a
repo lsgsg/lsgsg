@@ -1,0 +1,56 @@
+package java_network;
+
+import java.net.ServerSocket;
+
+public class NetTest3Server {
+
+	public static void main(String[] args) {
+	//클ㄹ라이언트 요청이 들어 올때까지 기다리는 것이 : 서버소켓 serversoket
+		ServerSocket ss = null;
+		//내컴퓨터가 사용중인 port number 확인
+		//for(int i = 0; i < 65536; i++) {
+			//try {
+				//ss = new ServerSocket(i);
+				//ss.close(); //사용중인 포트번호는 다시 사용 X
+						/*
+										 * 135번 포트 사용 중
+						139번 포트 사용 중
+						445번 포트 사용 중
+						1521번 포트 사용 중
+						2030번 포트 사용 중
+						5500번 포트 사용 중
+						49152번 포트 사용 중
+						49153번 포트 사용 중
+						49154번 포트 사용 중
+						49155번 포트 사용 중
+						49156번 포트 사용 중
+						49161번 포트 사용 중
+						49167번 포트 사용 중
+						49168번 포트 사용 중
+						49181번 포트 사용 중
+						49289번 포트 사용 중
+						50076번 포트 사용 중
+						50077번 포트 사용 중
+						50089번 포트 사용 중
+						50090번 포트 사용 중
+						50107번 포트 사용 중
+						50112번 포트 사용 중
+						50114번 포트 사용 중
+										 * 
+										 * 
+										 * */
+			//} catch (Exception e) {
+			//	System.out.println(i + "번 포트 사용 중");
+			
+		socket socket = null;	
+		try {
+			ss = new ServerSocket(9999);
+			System.out.println("서버 서비스 중 ...");
+			socket = ss.accept();
+		} catch (Exception e) {
+			System.out.println("server err : " + e);
+		}
+
+	}
+
+}

@@ -1,0 +1,324 @@
+package java_store_pack;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Calendar;
+
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
+
+
+
+public class Java_Jnmun2 extends JPanel implements ActionListener{
+	JTextField txtSirum,txtSsu,txtSsu1,txtSnum;
+	JButton btnUpdate,btnOk,btnSu,btnSu1,btnClose;
+	JButton btnF,btnP,btnN,btnL;
+	JLabel lblRec,lblPic;
+
+	String o;
+	String sql, imgPath; //--- 그림 파일 경로 변수
+	int iTotal = 0;	// 자료의 갯수
+	int iLast = 0; 	// 마지막 레코드 번호
+	JPanel picPn;
+	File file;  //--- 이미지 로딩하기 위한 변수
+	boolean isInsert = false;	// Insert 버튼 눌림 여부
+	boolean isUpdate = false;	// Update 버튼 눌림 여부
+	
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs1, rs2;
+	
+	public Java_Jnmun2(){
+		design();
+		addListener();
+		accDb();
+		
+		init();
+		display();
+	}
+	
+	private void addListener() {
+		btnF.addActionListener(this);
+		btnP.addActionListener(this);
+		btnN.addActionListener(this);
+		btnL.addActionListener(this);
+		btnUpdate.addActionListener(this);
+		btnOk.addActionListener(this);
+		btnSu.addActionListener(this);
+		btnSu1.addActionListener(this);
+		btnClose.addActionListener(this);
+	}
+	
+	private void accDb() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:&127.0.0.1:1521:orcl", "scott", "tiger");
+		} catch (Exception e) {
+			System.out.println("accDb err : " + e.getMessage());
+		}
+	}
+	
+	private void init() {
+		try {
+			sql = "select * from sang order by s_num asc";
+			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			rs1 = pstmt.executeQuery();
+			rs1.last();
+			iTotal = rs1.getRow();
+			iLast = rs1.getInt("s_num");
+			rs1.first();
+		} catch (Exception e) {
+			System.out.println("init err : " + e);
+		}
+	}
+	private void display() {
+		try {
+			
+			txtSirum.setText(rs1.getString("s_irum"));
+			txtSsu.setText(rs1.getString("s_su"));
+
+			lblRec.setText(rs1.getRow() + " / " + iTotal);
+			
+			//이미지 출력
+			imgPath = rs1.getString("s_image");
+			dispImage();
+		} catch (Exception e) {
+			System.out.println("sang display err : " + e);
+		}
+	}
+	
+	private void dispImage() {
+		if(imgPath != null) {
+			String dir = "C:\\work\\jsou\\java_jdbc_final_book\\src\\bookimage\\";
+			ImageIcon icon = new ImageIcon(dir + imgPath);
+			lblPic.setIcon(icon);
+			lblPic.setToolTipText("이미지 파일명 : " + imgPath);  //툴팁 텍스트
+			if(icon != null) 
+				lblPic.setText(null);
+			else
+				lblPic.setText("이미지 없음");
+		}
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+			if (e.getSource() == btnF) {
+				rs1.first();
+				display();
+			} else if (e.getSource() == btnP) {
+				if(rs1.isFirst()) return;
+				rs1.previous();
+				display();
+			} else if (e.getSource() == btnN) {
+				if(rs1.isLast()) return;
+				rs1.next();
+				display();
+			} else if (e.getSource() == btnL) {
+				rs1.last();
+				display();
+			}
+			
+		} catch (Exception e2) {
+			System.out.println("레코드 이동 오류: " + e2);
+		}
+		if (e.getSource() == btnOk) { //신규 도서
+
+				try {
+					sql = "select s_num, s_irum, s_su from sang where (?,?,?)";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, txtSnum.getText());
+					pstmt.setString(2, txtSirum.getText());
+					pstmt.setString(3, txtSsu.getText());
+					if(file.getName() == null || file.getName().equals("")) {
+						pstmt.setString(6, null);
+					}else {
+						pstmt.setString(6, file.getName());
+					}
+					pstmt.executeUpdate();
+					
+					txtSirum.setEditable(false);
+					txtSsu.setEditable(false);
+					txtSsu1.setEditable(false);
+					
+					init();
+					rs1.last();
+					display();
+					
+				} catch (Exception e2) {
+					System.out.println("도서 추가 오류 : " + e2);
+				}
+			
+		} else if (e.getSource() == btnSu1) { //이미지 삽입
+			JFileChooser chooser = new JFileChooser("C:\\work\\jsou\\java_store\\src\\sangimage\\");
+			chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+			int result = chooser.showOpenDialog(this);
+			if(result == JFileChooser.CANCEL_OPTION) {
+				file = null;
+			}else {
+				file = chooser.getSelectedFile();
+			}
+//			System.out.println(file.getName());
+			imgPath = file.getName();
+			dispImage();
+			
+			lblPic.setVisible(true);
+			
+		} else if (e.getSource() == btnUpdate) {
+			//제목, 장르, 메모
+			if(isUpdate == false) {
+				isUpdate = true;
+				btnUpdate.setText("완료");
+
+			}else {
+				isUpdate = false;
+				btnUpdate.setText("수정");
+				
+				try {
+					sql = "update book set b_jemok=?,b_jang=?,b_memo=? where b_bun=?";
+					
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, txtSirum.getText());
+					pstmt.setString(2, txtSsu.getText());
+					pstmt.executeUpdate();
+					
+					int currentRow = rs1.getRow(); //현재 레코드(포인트) 순서를 기억
+					
+					init();  //수정된 자료를 다시 보이기 위해서 (수정된 자료 출력을 위해)
+					rs1.absolute(currentRow);  //절대위치로 간다(예: 커런터 로우가 3이면 3번째로 이동)
+					display();
+				} catch (Exception e2) {
+					System.out.println("도서 수정 오류 : " + e2);
+				}
+			}
+		} else if (e.getSource() == btnClose) { // 닫기
+			try {
+				int re = JOptionPane.showConfirmDialog(this, 
+						"정말 종료할까요?","선택",JOptionPane.YES_NO_OPTION);
+					if(re == JOptionPane.NO_OPTION) {
+						return;
+					}else {
+					
+					}
+				if (rs1 != null)
+					rs1.close();
+				if (rs2 != null)
+					rs2.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e2) {
+				System.out.println("도서 닫기 오류 : " + e);
+			} finally {
+				PstoreMain.book_book.setEnabled(true); // bookMain 화면의 대여메뉴를 활성화 시킴
+				PstoreMain.childWinBook.dispose();
+			}
+		}
+		
+	}
+	
+	public void design(){
+		this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+		
+		//도서정보 패널========================
+		JPanel bookPn=new JPanel(new GridLayout(6,1));
+		bookPn.setBorder(new TitledBorder(new TitledBorder("상품 주문"), "", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.LEFT));
+		JPanel bPn1=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JPanel bPn2=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JPanel bPn3=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JPanel bPn4=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JPanel bPn5=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JPanel bPn6=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		
+		txtSirum=new JTextField("",5);
+		txtSsu=new JTextField("",5);
+		txtSsu1=new JTextField("",5);
+		
+		txtSsu.setEditable(false);
+
+
+		btnUpdate=new JButton("주문 완료");
+		btnOk=new JButton("확인");
+		btnSu=new JButton("수정");
+		btnSu1=new JButton("수정");
+		btnClose=new JButton("닫기");
+		btnF=new JButton(" <<= ");
+		btnP=new JButton("  <= ");
+		btnN=new JButton(" =>  ");
+		btnL=new JButton(" =>> ");
+		lblRec=new JLabel(" 0 / 0 ",JLabel.CENTER);
+		bPn1.add(new JLabel("주문 상품명 입력 :"));
+		bPn1.add(txtSirum);
+		bPn1.add(btnOk);
+		bPn1.add(btnSu);
+		bPn2.add(new JLabel("주문 가능 수량 :"));
+		bPn2.add(txtSsu);
+		bPn4.add(new JLabel("주문 개수 :"));
+		bPn4.add(txtSsu1);
+		bPn4.add(btnSu1);
+
+		
+		bookPn.add(bPn1);  bookPn.add(bPn2); 	bookPn.add(bPn3);
+		bookPn.add(bPn4);  bookPn.add(bPn5); 	bookPn.add(bPn6);
+		this.add(bookPn);
+		
+		//이미지 패널----------------------------------------------------
+		picPn=new JPanel(new BorderLayout());
+		lblPic = new JLabel();
+		picPn.add(lblPic);
+
+		this.add(picPn);
+
+		//레코드 이동 패널------------------------------------------------
+		JPanel movePn=new JPanel();
+		movePn.setBorder(new TitledBorder(new TitledBorder("상품 이동"), "", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.LEFT));
+		movePn.add(btnF);
+		movePn.add(btnP);
+		movePn.add(lblRec);
+		movePn.add(btnN);
+		movePn.add(btnL);
+		
+		this.add(movePn);
+		
+        //명령 버튼 패널--------------------------------------------------
+		JPanel bottomPn1=new JPanel();
+		bottomPn1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+		bottomPn1.add(btnUpdate);
+		bottomPn1.add(btnClose);
+		
+		this.add(bottomPn1);
+		
+		this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+	}
+	
+
+	public static void main(String[] args){
+		Java_Jnmun2 bookBook =new Java_Jnmun2();
+		JFrame frame=new JFrame("상품 주문창");
+		frame.getContentPane().add(bookBook);
+		frame.setBounds(440,110,430,700);
+		frame.setVisible(true);
+		frame.dispose();
+	}
+}

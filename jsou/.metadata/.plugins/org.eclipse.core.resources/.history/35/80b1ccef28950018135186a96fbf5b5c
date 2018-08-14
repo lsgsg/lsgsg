@@ -1,0 +1,29 @@
+package db.pack1;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class DbTestTableClick extends JFrame {
+	String[][] datas = new String[0][4];//0행 4열;
+	String[] title = {"부서번호","부서명","부서위치","부서전화"};
+	DefaultTableModel model;
+	JTable table;
+	JLabel lblCount;
+	
+	Connection conn;
+	Statement stmt;
+	ResultSet rs;
+	
+	
+	public static void main(String[] args) {
+		new DbTestTableClick();
+
+	}
+
+}

@@ -1,0 +1,60 @@
+package db.pack1;
+
+import java.awt.FlowLayout;
+import java.awt.LayoutManager;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class DbTestTableClick extends JFrame {
+	private static final LayoutManager FlowLayout = null;
+	String[][] datas = new String[0][4];//0행 4열;
+	String[] title = {"부서번호","부서명","부서위치","부서전화"};
+	DefaultTableModel model;
+	JTable table;
+	JLabel lblCount;
+	
+	Connection conn;
+	Statement stmt;
+	ResultSet rs;
+	
+	public DbTestTableClick() {
+		setTitle("부서별 직원정보");
+		layInit();
+		accDb();
+		setBounds(1000,250,300,700);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLayout(FlowLayout);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				table = (JTable)e.getComponent();
+				model = (DefaultTableModel)table.getModel();
+			}
+		});
+	}
+	private void layInit() {
+		model = new DefaultTableModel(datas, title);
+		table = new JTable(model);
+		JScrollPane pane = new JScrollPane(table);
+		add(pane);
+	}
+	private void accDb() {
+		// TODO Auto-generated method stub
+
+	}
+	public static void main(String[] args) {
+		new DbTestTableClick();
+
+	}
+
+}

@@ -1,0 +1,22 @@
+package java_network;
+
+import java.net.ServerSocket;
+
+public class NetTest3Server {
+
+	public static void main(String[] args) {
+	//클ㄹ라이언트 요청이 들어 올때까지 기다리는 것이 : 서버소켓 serversoket
+		ServerSocket ss = null;
+		//내컴퓨터가 사용중인 port number 확인
+		for(int i = 0; i < 65536; i++) {
+			try {
+				ss = new ServerSocket(i);
+				ss.close();
+			} catch (Exception e) {
+				System.out.println(i + "번 포트 사용 중");
+			}
+		}
+
+	}
+
+}

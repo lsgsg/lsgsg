@@ -1,0 +1,28 @@
+package lambdatest;
+
+public class ThreadClass {
+
+	private void sendEmail( String ss ) {
+		System.out.println(ss + "메일을 전송");
+
+	}
+	public ThreadClass() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	void m1() {
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				sendEmail("m1");
+				
+			}
+		}).start();
+	}
+	public static void main(String[] args) {
+		new ThreadClass();
+
+	}
+
+}

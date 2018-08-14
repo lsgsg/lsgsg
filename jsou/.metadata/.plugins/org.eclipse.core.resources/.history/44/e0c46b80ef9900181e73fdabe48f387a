@@ -1,0 +1,21 @@
+package java_network;
+
+import java.net.InetAddress;
+
+public class NetTest1 {
+
+	public static void main(String[] args) {
+		InetAddress ia;
+		InetAddress ia2[];
+		
+		try {
+			ia = InetAddress.getByName("www.naver.com");//www.naver.com/210.89.164.90
+			System.out.println(ia);
+			System.out.println(ia.getHostAddress());
+		} catch (Exception e) {
+			System.out.println("err: " + e);
+		}
+
+	}
+
+}

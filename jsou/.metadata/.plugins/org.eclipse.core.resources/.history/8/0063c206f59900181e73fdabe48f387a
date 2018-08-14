@@ -1,0 +1,22 @@
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.Socket;
+
+public class NetTest2_real {
+	//soket? 
+	public static void main(String[] args) {
+		try {
+			InetAddress ia = InetAddress.getByName("www.daum.net");
+			Socket socket = new Socket(ia, 80);//클라이언트 소켓
+			
+			PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())));
+			
+			out.println("GET http://www.daum.net");
+			out.flush();//요청후 내 컴퓨터내 버퍼를 비운다.
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

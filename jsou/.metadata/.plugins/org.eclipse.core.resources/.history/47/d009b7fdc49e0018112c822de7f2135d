@@ -1,0 +1,16 @@
+import java.rmi.Naming;
+
+public class RmiHelloClient {
+
+	public static void main(String[] args) {
+		try {
+			RmiHelloInter rh = (RmiHelloInter)Naming.lookup("rmi://192.168.0.53:1099/DDurugi");
+			String result = rh.sayHello("뚜루뚜루기");
+			System.out.println("result : " + result);
+		} catch (Exception e) {
+			System.out.println("Client err" + e);
+		}
+
+	}
+
+}

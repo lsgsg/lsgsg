@@ -1,0 +1,20 @@
+package lambdatest;
+
+public class OurMain {
+
+	public static void main(String[] args) {
+		//1. 인자가 없는 추상 메소드
+			OurInter inter = new OurInter() {
+				
+				@Override
+				public void abc() {
+					System.out.println("일반적 익명 클래스의 메소드 ");
+				}
+			};
+			
+		 inter.abc();	
+		//2. 인자가 있는 추상메소드
+		
+		//3. 
+	}
+}

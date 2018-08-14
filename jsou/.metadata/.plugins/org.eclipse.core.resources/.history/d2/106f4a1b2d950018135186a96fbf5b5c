@@ -1,0 +1,123 @@
+package db.pack1;
+
+import java.awt.FlowLayout;
+import java.awt.LayoutManager;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
+
+public class DbTestTableClick extends JFrame {
+	private static final LayoutManager FlowLayout = null;
+	String[][] datas = new String[0][4];//0행 4열;
+	String[] title = {"부서번호","부서명","부서위치","부서전화"};
+	DefaultTableModel model;
+	JTable table;
+	JLabel lblCount;
+	JTextArea textArea = new JTextArea();
+	
+	Connection conn;
+	Statement stmt;
+	ResultSet rs;
+	
+	public DbTestTableClick() {
+		setTitle("부서별 직원정보");
+		layInit();
+		accDb();
+		setBounds(1000,250,300,700);
+		setVisible(true);
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				int cf = JOptionPane.showConfirmDialog(DbTestTableClick.this, "정말 종료하시게? ","종료",JOptionPane.YES_NO_OPTION);
+				if(cf == JOptionPane.YES_OPTION) {
+					setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					try {
+						if (rs != null) rs.close();
+						if (stmt != null) stmt.close();
+						if (conn != null) conn.close();
+					} catch (Exception e2) {
+					
+					}
+				}else {
+					setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+				}
+			}
+		});
+		setLayout(FlowLayout);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				table = (JTable)e.getComponent();
+				model = (DefaultTableModel)table.getModel();
+				msClick();
+			}
+		});
+	}
+	private void msClick() {
+		try {
+
+		} catch (Exception e) {}
+
+	}
+	private void layInit() {
+		model = new DefaultTableModel(datas, title);
+		table = new JTable(model);
+		JScrollPane pane = new JScrollPane(table);
+		add("North",pane);
+		textArea.setEditable(false);//읽기만 가능
+		JScrollPane pane2= new JScrollPane(textArea);
+		add("Center",pane2);
+	}
+	private void accDb() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
+			String sql = "select buser_no, buser_name, buser_loc, buser_tel from buser order by buser_no";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			int cou = 0;
+			while(rs.next()) {
+				String buser_no = rs.getString(1);
+				String buser_name = rs.getString(2);
+				String buser_loc = rs.getString(3);
+				String buser_tel = rs.getString(4);
+				String [] imsi = {buser_no,buser_name,buser_loc,buser_tel};
+				model.addRow(imsi);
+				cou++;
+			}
+			lblCount = new JLabel("부서 건수 : " + cou );
+			add("South",lblCount);
+		} catch (Exception e) {
+			System.out.println("드라이버 로딩 에러 :" + e);
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(stmt != null ) stmt.close();
+				if(conn != null) conn.close();
+			}catch (Exception e2) {
+				
+			}
+		}
+		
+		
+	}
+	public static void main(String[] args) {
+		new DbTestTableClick();
+
+	}
+
+}

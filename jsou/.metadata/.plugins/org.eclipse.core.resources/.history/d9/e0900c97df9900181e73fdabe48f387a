@@ -1,0 +1,23 @@
+package lambdatest;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class ButtonEvent extends JFrame {
+	
+	public ButtonEvent() {
+		super("이벤트 람다 사용");
+		setLayout(null);
+		JButton btn1 = new JButton("click1");
+	    btn1.setBounds(10,50,100,50);
+	    add(btn1);
+	    
+	    setBounds(200,200,300,300);
+	    setVisible(true);
+	    setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	public static void main(String[] args) {
+		new ButtonEvent();
+	}
+}
+

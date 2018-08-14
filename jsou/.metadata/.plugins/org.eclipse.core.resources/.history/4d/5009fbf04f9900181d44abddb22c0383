@@ -1,0 +1,5 @@
+package lambdatest;
+
+public interface OurInterArgOther {
+	void def(int a, int b);
+}

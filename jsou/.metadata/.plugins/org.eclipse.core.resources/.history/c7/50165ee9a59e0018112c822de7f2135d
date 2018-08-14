@@ -1,0 +1,17 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
+public class Udp1 {
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("보넬 자료 입력");
+		String msg = in.readLine();
+		
+		DatagramSocket dsoc = new DatagramSocket(); // 우체통 으로 생각하렴;ㄴ
+		InetAddress ia = InetAddress.getByName("192.168.0.08");
+	}
+
+}
